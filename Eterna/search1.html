@@ -128,13 +128,7 @@
               <div class="span6">
                 <div >
                   <h4><strong><span class="colored">Passage</span></strong></h4>
-                  <p id = "pass">sdf</p>
-                  <div id="headers"></div>
-
-
-
-
-
+                  <div id="pass"></div>
                 </div>
               </div>
             </div>
@@ -165,6 +159,7 @@
           $("#messages").append("<li>Time : " + msg.time + "</li>");
           $("#messages").append("<li>Scores : " + msg.scores + "</li>");
           $("#messages").append("<li>Result : " + msg.result + "</li>");
+          $("#headers").load("text/text1_"+msg.result+".html");
         });
         $("#sendbutton").on("click", function() {
           var msg = {
@@ -182,7 +177,7 @@
           }
 
         });
-        $("#headers").load("text/text1_0.html");
+
 
 
       });
