@@ -5,9 +5,9 @@ import json
 
 def runner(mocker1, mocker2):
     def inner(q, p):
-        return {'time' : 0, 
+        return {'time' : 0,
         'scores' : '1002.3, 901.3, 0.0, 0.0',
-        'results' : '0'
+        'result' : '0'
         }
     return inner
 
