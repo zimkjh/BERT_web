@@ -27,20 +27,6 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
   <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
   <link rel="shortcut icon" href="ico/favicon.png" />
-
-  <!--taeoh-->
-  <!-- <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"
-  ></script> -->
-  <!-- here taeoh -->
   <!-- =======================================================
     Theme Name: Eterna
     Theme URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
@@ -50,59 +36,6 @@
 </head>
 
 <body>
-  <!-- taeoh2 -->
-  <!-- <div class="container-fluid">
-    <div class="row">
-      <h1>Bert Demo Site</h1>
-    </div>
-    <div class="form-group">
-      <input
-        id="query"
-        type="text"
-        class="form-control"
-        placeholder="질문을 입력하세요"
-        name="text1"
-      />
-      <button id="sendbutton" type="submit" class="btn btn-primary">
-        Submit
-      </button>
-    </div>
-    <div class="row">
-      <div class="col-lg-3">
-        <h2>Result</h2>
-        <ul id="messages"></ul>
-      </div>
-      <div class="col-lg-9">
-        <h2>문서</h2>
-      </div>
-    </div>
-    <p>This is some text.</p>
-  </div>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      var socket = io.connect("http://127.0.0.1:9999");
-      socket.on("connect", function() {
-        console.log("Connected");
-      });
-
-      socket.on("json", function(msg) {
-        console.log("hello");
-        $("#messages").append("<li>Time : " + msg.time + "</li>");
-        $("#messages").append("<li>Scores : " + msg.scores + "</li>");
-        $("#messages").append("<li>Result : " + msg.results + "</li>");
-      });
-      $("#sendbutton").on("click", function() {
-        var msg = {
-          question: $("#query").val(),
-          passages: 1
-        };
-        socket.emit("message", msg);
-        $("#query").val("");
-      });
-    });
-  </script> -->
-<!-- taeoh2 -->
-
 
 
 
@@ -115,10 +48,6 @@
           <div class="row">
             <div class="span6">
               <p class="topcontact">CSI4101 소프트웨어 종합설계</p>
-            </div>
-            <div class="span6">
-
-
             </div>
           </div>
         </div>
@@ -138,59 +67,9 @@
                 <nav>
                   <ul class="nav topnav">
                     <li class="dropdown active">
-                      <a href="index.html"><i class="icon-home"></i> Home <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <!-- <li><a href="index-alt2.html">Homepage 2</a></li> -->
-                        <li><a href="index-alt3.html">Homepage 3</a></li>
-                        <!-- <li><a href="index-alt4.html">Parallax slider</a></li> -->
-                        <li><a href="index-landingpage.html">Landing page</a></li>
-                      </ul>
+                      <a href="index.html"><i class="icon-home"></i> Home </a>
                     </li>
-                    <!-- <li class="dropdown">
-                      <a href="#">Features <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="icon-variations.html">Icon variations</a></li>
-                        <li class="dropdown"><a href="#">3rd menus<i class="icon-angle-right"></i></a>
-                          <ul class="dropdown-menu sub-menu-level1">
-                            <li><a href="index.html">Sub menu</a></li>
-                            <li><a href="index.html">Sub menu</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li> -->
-                    <!-- <li class="dropdown">
-                      <a href="#">Pages <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="pricingbox.html">Pricing boxes</a></li>
-                        <li><a href="404.html">404</a></li>
-                      </ul>
-                    </li> -->
-                    <!-- <li class="dropdown">
-                      <a href="#">Portfolio <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                        <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                        <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                        <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                      </ul>
-                    </li> -->
-                    <!-- <li class="dropdown">
-                      <a href="#">Blog <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                        <li><a href="blog-fullwidth.html">Blog fullwidth</a></li>
-                        <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
-                        <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
-                      </ul>
-                    </li> -->
+
                     <li>
                       <a href="portfolio-2cols.html">Demo</a>
                     </li>
@@ -220,19 +99,19 @@
             <div class="container">
               <div class="row">
                 <div class="span6">
-                  <!-- <img src="img/slides/camera/slide2/iMac.png" alt="" /> -->
-                  <img src="img/BERT/res_graph/res_chart_1.png" alt="" class="animated bounceInDown delay1" />
+                  <img src="img/BERT/res_graph/res_chart_2.png" alt="" class="animated bounceInDown delay1" />
 
                 </div>
                 <div class="span6">
-                  <h2 class="animated fadeInDown"><strong>Put your <span class="colored">Opt in form</span></strong></h2>
-                  <p class="animated fadeInUp"> Vim porro dicam reprehendunt te, populo quodsi dissentiet cum ad. Ne natum deseruisse vis. Iisque deseruisse sententiae mel ne, dolores appetere vim ut. Sea no tamquam reprimique.</p>
-                  <form>
-                    <div class="input-append">
-                      <input class="span3 input-large" type="text">
-                      <button class="btn btn-theme btn-large" type="submit">Subscribe</button>
-                    </div>
-                  </form>
+                  <h2 class="animated fadeInDown"><strong><span class="colored">BM25 Okaphi </span>Rank</strong></h2>
+                  <p class="animated fadeInUp">TF-IDF based</p>
+                  <p class="animated fadeInUp" >Scoring algorithm considering length of document</p>
+                  <p class="animated fadeInUp" >Important Factors</p>
+                  <ul>
+                    <li>Rare and infrequent word in the Query</li>
+                    <li>Term frequency of the word</li>
+                    <li>Short length of document</li>
+                  </ul>
                 </div>
 
               </div>
@@ -245,21 +124,20 @@
             <div class="container">
               <div class="row">
                 <div class="span6">
-                  <!-- <img src="img/slides/camera/slide2/iMac.png" alt="" /> -->
-                  <img src="img/BERT/res_graph/res_chart_2.png" alt="" class="animated bounceInDown delay1" />
+                  <img src="img/BERT/res_graph/res_chart_1.png" alt="" class="animated bounceInDown delay1" />
 
                 </div>
                 <div class="span6">
-                  <h2 class="animated fadeInDown"><strong>Put your <span class="colored">Opt in form</span></strong></h2>
-                  <p class="animated fadeInUp"> Vim porro dicam reprehendunt te, populo quodsi dissentiet cum ad. Ne natum deseruisse vis. Iisque deseruisse sententiae mel ne, dolores appetere vim ut. Sea no tamquam reprimique.</p>
-                  <form>
-                    <div class="input-append">
-                      <input class="span3 input-large" type="text">
-                      <button class="btn btn-theme btn-large" type="submit">Subscribe</button>
-                    </div>
-                  </form>
+                  <h2 class="animated fadeInDown"><strong> <span class="colored">BM25 L</span> Rank</strong></h2>
+                  <p class="animated fadeInUp">TF-IDF based</p>
+                  <p class="animated fadeInUp" >Scoring algorithm considering length of document</p>
+                  <p class="animated fadeInUp" >Important Factors</p>
+                  <ul>
+                    <li>Rare and infrequent word in the Query</li>
+                    <li>Term frequency of the word</li>
+                    <li>Short length of document</li>
+                  </ul>
                 </div>
-
               </div>
             </div>
           </div>
@@ -270,19 +148,19 @@
             <div class="container">
               <div class="row">
                 <div class="span6">
-                  <!-- <img src="img/slides/camera/slide2/iMac.png" alt="" /> -->
                   <img src="img/BERT/res_graph/res_chart_3.png" alt="" class="animated bounceInDown delay1" />
 
                 </div>
                 <div class="span6">
-                  <h2 class="animated fadeInDown"><strong>Put your <span class="colored">Opt in form</span></strong></h2>
-                  <p class="animated fadeInUp"> Vim porro dicam reprehendunt te, populo quodsi dissentiet cum ad. Ne natum deseruisse vis. Iisque deseruisse sententiae mel ne, dolores appetere vim ut. Sea no tamquam reprimique.</p>
-                  <form>
-                    <div class="input-append">
-                      <input class="span3 input-large" type="text">
-                      <button class="btn btn-theme btn-large" type="submit">Subscribe</button>
-                    </div>
-                  </form>
+                  <h2 class="animated fadeInDown"><strong><span class="colored">BM25 Plus</span> Rank</strong></h2>
+                  <p class="animated fadeInUp">TF-IDF based</p>
+                  <p class="animated fadeInUp" >Scoring algorithm considering length of document</p>
+                  <p class="animated fadeInUp" >Important Factors</p>
+                  <ul>
+                    <li>Rare and infrequent word in the Query</li>
+                    <li>Term frequency of the word</li>
+                    <li>Short length of document</li>
+                  </ul>
                 </div>
 
               </div>
@@ -295,21 +173,13 @@
             <div class="container">
               <div class="row">
                 <div class="span6">
-                  <!-- <img src="img/slides/camera/slide2/iMac.png" alt="" /> -->
                   <img src="img/BERT/res_graph/res_chart_4.png" alt="" class="animated bounceInDown delay1" />
-
                 </div>
                 <div class="span6">
-                  <h2 class="animated fadeInDown"><strong>Put your <span class="colored">Opt in form</span></strong></h2>
-                  <p class="animated fadeInUp"> Vim porro dicam reprehendunt te, populo quodsi dissentiet cum ad. Ne natum deseruisse vis. Iisque deseruisse sententiae mel ne, dolores appetere vim ut. Sea no tamquam reprimique.</p>
-                  <form>
-                    <div class="input-append">
-                      <input class="span3 input-large" type="text">
-                      <button class="btn btn-theme btn-large" type="submit">Subscribe</button>
-                    </div>
-                  </form>
+                  <h2 class="animated fadeInDown"><strong><span class="colored">Jaccard Coefficient</span> Rank</strong></h2>
+                  <p class="animated fadeInUp">Content based </p>
+                  <p class="animated fadeInUp">Not considering term frequency </p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -325,7 +195,7 @@
       <div class="container">
 
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="span12">
             <div class="row">
               <div class="span4">
@@ -374,7 +244,7 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="span12">
@@ -382,172 +252,11 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="span12">
-            <div class="row">
-              <div class="span12">
-                <div class="aligncenter">
-                  <h3>Our <strong>Pricing</strong></h3>
-                  <p>Lorem ipsum dolor sit amet, labores dolorum scriptorem eum an, te quodsi sanctus neglegentur.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="row">
-
-              <div class="span3">
-                <div class="pricing-box-wrap animated-fast flyIn">
-                  <div class="pricing-heading">
-                    <h3>Very <strong>Basic</strong></h3>
-                  </div>
-                  <div class="pricing-terms">
-                    <h6>&#36;15.00 / Month</h6>
-                  </div>
-                  <div class="pricing-content">
-                    <ul>
-                      <li><i class="icon-ok"></i> 100 applications</li>
-                      <li><i class="icon-ok"></i> 24x7 support available</li>
-                      <li><i class="icon-ok"></i> No hidden fees</li>
-                      <li><i class="icon-ok"></i> Free 30-days trial</li>
-                      <li><i class="icon-ok"></i> Stop anytime easily</li>
-                    </ul>
-                  </div>
-                  <div class="pricing-action">
-                    <a href="#" class="btn btn-medium btn-theme"><i class="icon-chevron-down"></i> Sign Up</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="span3">
-                <div class="pricing-box-wrap animated-fast flyIn">
-                  <div class="pricing-heading">
-                    <h3>Simple <strong>Choice</strong></h3>
-                  </div>
-                  <div class="pricing-terms">
-                    <h6>&#36;20.00 / Month</h6>
-                  </div>
-                  <div class="pricing-content">
-                    <ul>
-                      <li><i class="icon-ok"></i> 100 applications</li>
-                      <li><i class="icon-ok"></i> 24x7 support available</li>
-                      <li><i class="icon-ok"></i> No hidden fees</li>
-                      <li><i class="icon-ok"></i> Free 30-days trial</li>
-                      <li><i class="icon-ok"></i> Stop anytime easily</li>
-                    </ul>
-                  </div>
-                  <div class="pricing-action">
-                    <a href="#" class="btn btn-medium btn-theme"><i class="icon-chevron-down"></i> Sign Up</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="span3">
-                <div class="pricing-box-wrap special animated-slow flyIn">
-                  <div class="pricing-heading">
-                    <h3>Special <strong>Choice</strong></h3>
-                  </div>
-                  <div class="pricing-terms">
-                    <h6>&#36;15.00 / Month</h6>
-                  </div>
-                  <div class="pricing-content">
-                    <ul>
-                      <li><i class="icon-ok"></i> 100 applications</li>
-                      <li><i class="icon-ok"></i> 24x7 support available</li>
-                      <li><i class="icon-ok"></i> No hidden fees</li>
-                      <li><i class="icon-ok"></i> Free 30-days trial</li>
-                      <li><i class="icon-ok"></i> Stop anytime easily</li>
-                    </ul>
-                  </div>
-                  <div class="pricing-action">
-                    <a href="#" class="btn btn-medium btn-theme"><i class="icon-chevron-down"></i> Sign Up</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="span3">
-                <div class="pricing-box-wrap animated flyIn">
-                  <div class="pricing-heading">
-                    <h3>Just <strong>Happy</strong></h3>
-                  </div>
-                  <div class="pricing-terms">
-                    <h6>&#36;15.00 / Month</h6>
-                  </div>
-                  <div class="pricing-content">
-                    <ul>
-                      <li><i class="icon-ok"></i> 100 applications</li>
-                      <li><i class="icon-ok"></i> 24x7 support available</li>
-                      <li><i class="icon-ok"></i> No hidden fees</li>
-                      <li><i class="icon-ok"></i> Free 30-days trial</li>
-                      <li><i class="icon-ok"></i> Stop anytime easily</li>
-                    </ul>
-                  </div>
-                  <div class="pricing-action">
-                    <a href="#" class="btn btn-medium btn-theme"><i class="icon-chevron-down"></i> Sign Up</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-
-        </div>
-
-
 
         <div class="row">
           <div class="span12 aligncenter">
-            <h3 class="title">What people <strong>saying</strong> about us</h3>
-            <div class="blankline30"></div>
 
-            <ul class="bxslider">
-              <li>
-                <blockquote>
-                  Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum lorem vulputate. Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis
-                  feugiat
-                </blockquote>
-                <div class="testimonial-autor">
-                  <img src="img/dummies/testimonial/1.png" alt="" />
-                  <h4>Hillary Doe</h4>
-                  <a href="#">www.companyname.com</a>
-                </div>
-              </li>
-              <li>
-                <blockquote>
-                  Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum lorem vulputate. Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis
-                  feugiat
-                </blockquote>
-                <div class="testimonial-autor">
-                  <img src="img/dummies/testimonial/2.png" alt="" />
-                  <h4>Michael Doe</h4>
-                  <a href="#">www.companyname.com</a>
-                </div>
-              </li>
-              <li>
-                <blockquote>
-                  Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum lorem vulputate. Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis
-                  feugiat
-                </blockquote>
-                <div class="testimonial-autor">
-                  <img src="img/dummies/testimonial/3.png" alt="" />
-                  <h4>Mark Donovan</h4>
-                  <a href="#">www.companyname.com</a>
-                </div>
-              </li>
-              <li>
-                <blockquote>
-                  Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum lorem vulputate. Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis
-                  feugiat
-                </blockquote>
-                <div class="testimonial-autor">
-                  <img src="img/dummies/testimonial/4.png" alt="" />
-                  <h4>Marry Doe Elliot</h4>
-                  <a href="#">www.companyname.com</a>
-                </div>
-              </li>
-            </ul>
+            <div class="blankline30"></div>
 
           </div>
         </div>
@@ -560,7 +269,7 @@
       <div class="container">
         <div class="row">
           <div class="span12">
-            <h4 class="title">Recent <strong>Works</strong></h4>
+            <h4 class="title">Demo<strong> Wikis</strong></h4>
             <div class="row">
 
               <div class="grid cs-style-4">
@@ -644,46 +353,10 @@
       <div class="container">
         <div class="row">
           <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
-              <ul class="link-list">
-                <li><a href="#">Our company</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Press release</a></li>
-                <li><a href="#">What we have done</a></li>
-                <li><a href="#">Our support forum</a></li>
-              </ul>
-
-            </div>
           </div>
           <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Get in touch</h5>
-              <address>
-							<strong>Eterna company Inc.</strong><br>
-							Somestreet 200 VW, Suite Village A.001<br>
-							Jakarta 13426 Indonesia
-						</address>
-              <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
-              </p>
-            </div>
           </div>
           <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Subscribe newsletter</h5>
-              <p>
-                Keep updated for new releases and freebies. Enter your e-mail and subscribe to our newsletter.
-              </p>
-              <form class="subscribe">
-                <div class="input-append">
-                  <input class="span2" id="appendedInputButton" type="text">
-                  <button class="btn btn-theme" type="submit">Subscribe</button>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </div>
@@ -692,21 +365,12 @@
           <div class="row">
             <div class="span6">
               <div class="copyright">
-                <p><span>&copy; Eterna company. All right reserved</span></p>
+                <p><span>&copy; Efficient QA System Implementation</span></p>
               </div>
 
             </div>
 
             <div class="span6">
-              <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Eterna
-                -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
             </div>
           </div>
         </div>

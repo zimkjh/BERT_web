@@ -95,12 +95,12 @@
                 <nav>
                   <ul class="nav topnav">
                     <li class="dropdown active">
-                      <a href="index.html"><i class="icon-home"></i> Home <i class="icon-angle-down"></i></a>
+                      <a href="index.html"><i class="icon-home"></i> Home </a>
                       <ul class="dropdown-menu">
                         <!-- <li><a href="index-alt2.html">Homepage 2</a></li> -->
-                        <li><a href="index-alt3.html">Homepage 3</a></li>
+                        <!-- <li><a href="index-alt3.html">Homepage 3</a></li> -->
                         <!-- <li><a href="index-alt4.html">Parallax slider</a></li> -->
-                        <li><a href="index-landingpage.html">Landing page</a></li>
+                        <!-- <li><a href="index-landingpage.html">Landing page</a></li> -->
                       </ul>
                     </li>
                     <!-- <li class="dropdown">
@@ -185,52 +185,45 @@
     <!-- taeoh2 -->
     <section id="content">
       <div class="container">
-        <div class="row">
           <div class="span12">
 
-            <div>
-              <!-- <form>
-                <div class="input-append">
-                  <input id="query" class="span3 input-large" type="text">
-                  <button id="sendbutton" class="btn btn-theme btn-large" type="submit">Query</button>
+            <div class="row">
+              <div class="span6">
+
+                <div class="input-append" >
+                  <input id="query" class="span3 input-large" type="text" placeholder="질문을 입력하세요" name="text1">
+                  <button id="sendbutton" class="btn btn-theme btn-large" type="submit">Send Query</button>
                 </div>
-              </form> -->
+                <div class ="span4">
+                  <img src="img/dummies/works/1.jpg" alt="">
+
+                </div>
+              </div>
+
+              <div class="span6">
+                <!-- progress -->
+                <div id="myProgress">
+                  <div id="myBar"></div>
+                </div>
+                <div >
+                  <h4><strong><span class="colored">Result</span></strong></h4>
+                  <ul id="messages"></ul>
+                </div>
+                <div >
+                  <h4><strong><span class="colored">Passage</span></strong></h4>
+                </div>
+              </div>
+
             </div>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- <div class="container-fluid"> -->
-    <div>
 
-      <!-- <div class="form-group"> -->
-      <div class="input-append">
 
-      </div>
-        <input
-          id="query"
-          type="text"
-          class="form-control"
-          placeholder="질문을 입력하세요"
-          name="text1"
-        />
-        <button id="sendbutton" type="submit" class="btn btn-primary">
-          Submit
-        </button>
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <h2>Result</h2>
-          <ul id="messages"></ul>
-        </div>
-        <div class="col-lg-9">
-          <h2>문서</h2>
-        </div>
-      </div>
-      <p>This is some text.</p>
-    </div>
     <script type="text/javascript">
+
       $(document).ready(function() {
         var socket = io.connect("http://127.0.0.1:9999");
         socket.on("connect", function() {
@@ -278,72 +271,15 @@
     </section>
 
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
-              <ul class="link-list">
-                <li><a href="#">Our company</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Press release</a></li>
-                <li><a href="#">What we have done</a></li>
-                <li><a href="#">Our support forum</a></li>
-              </ul>
-
-            </div>
-          </div>
-          <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Get in touch</h5>
-              <address>
-							<strong>Eterna company Inc.</strong><br>
-							Somestreet 200 VW, Suite Village A.001<br>
-							Jakarta 13426 Indonesia
-						</address>
-              <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
-              </p>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Subscribe newsletter</h5>
-              <p>
-                Keep updated for new releases and freebies. Enter your e-mail and subscribe to our newsletter.
-              </p>
-              <form class="subscribe">
-                <div class="input-append">
-                  <input class="span2" id="appendedInputButton" type="text">
-                  <button class="btn btn-theme" type="submit">Subscribe</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
       <div id="sub-footer">
         <div class="container">
           <div class="row">
             <div class="span6">
               <div class="copyright">
-                <p><span>&copy; Eterna company. All right reserved</span></p>
+                <p><span>&copy; Efficient QA System Implementation</span></p>
+
               </div>
 
-            </div>
-
-            <div class="span6">
-              <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Eterna
-                -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
             </div>
           </div>
         </div>
