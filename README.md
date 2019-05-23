@@ -4,3 +4,4 @@
 
 Demo web-page of BERT (CSI4101)
 
+server : apache
