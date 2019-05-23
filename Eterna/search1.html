@@ -159,7 +159,7 @@
           $("#messages").append("<li>Time : " + msg.time + "</li>");
           $("#messages").append("<li>Scores : " + msg.scores + "</li>");
           $("#messages").append("<li>Result : " + msg.result + "</li>");
-          $("#headers").load("text/text1_"+msg.result+".html");
+          $("#pass").load("text/text1_"+msg.result+".html");
         });
         $("#sendbutton").on("click", function() {
           var msg = {
