@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style >
+      /* #myProgress {
+  width: 100%;
+  background-color: grey;
+} */
+#progressTimer {
+    width:560px;
+    height:5px;
+}
+/* #myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+#progressBar {
+  width: 923px;
+  margin: 10px auto;
+  height: 22px;
+  background-color: #0A5F44;
+}
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  /* width: 0;
+  background-color: #CBEA00;
+  #progressBar {
+  width: 80%;
+  margin: 10px auto;
+  height: 32px;
+  background-color: #0A5F44;
+}
+
+#progressBar2 div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px;
+  width: 0;
+  background-color: #CBEA00;
+  box-sizing: border-box;
+}  */
+
+/* Do not take in account */
+/* html{padding-top:40px}a.solink{position:fixed;top:0;width:100%;text-align:center;background:#f3f5f6;color:#cfd6d9;border:1px solid #cfd6d9;line-height:30px;text-decoration:none;transition:all .3s;z-index:999}a.solink::first-letter{text-transform:capitalize}a.solink:hover{color:#428bca}
+} */
+    </style>
+    <script type="text/javascript">
+//       function move() {
+//     var elem = document.getElementById("myBar");
+//     var width = 1;
+//     var id = setInterval(frame, 10);
+//     function frame() {
+//       if (width >= 100) {
+//         clearInterval(id);
+//       } else {
+//         width++;
+//         elem.style.width = width + '%';
+//       }
+//     }
+//   }
+//   function progress(timeleft, timetotal, $element) {
+//     var progressBarWidth = timeleft * $element.width() / timetotal;
+//     $element
+//         .find('div')
+//         .animate({ width: progressBarWidth }, 500)
+//         .html(timeleft + " seconds to go");
+//     if(timeleft > 0) {
+//         setTimeout(function() {
+//             progress(timeleft - 1, timetotal, $element);
+//         }, 1000);
+//     }
+// };
+// function progress2(timeleft, timetotal, $element) {
+//     var progressBarWidth = timeleft;
+//     $element.find('div').animate({ width: progressBarWidth }, 500).html(Math.floor(timeleft/60) + ":"+ timeleft%60);
+//     if(timeleft <= 500) {
+//         setTimeout(function() {
+//             progress2(timeleft + 1, timetotal, $element);
+//         }, 500);
+//     }
+// };
+$("#progressTimer").progressTimer({
+    timeLimit: 20,
+    warningThreshold: 10,
+    baseStyle: 'progress-bar-warning',
+    warningStyle: 'progress-bar-danger',
+    completeStyle: 'progress-bar-info',
+    onFinish: function() {
+        console.log("I'm done");
+    }
+});
+//   window.onload = function() {
+//   move();
+//   progress(180, 180, $('#progressBar'));
+//   progress2(100,500, $('#progressBar2'))
+// };
+    </script>
+  </head>
+  <body>
+    <!-- <div id="myProgress">
+  <div id="myBar"></div>
+</div>
+
+<div id="progressBar">
+  <div></div>
+</div>
+<div id="progressBar2">
+  <div class="bar"></div>
+</div> -->
+<div id="progressTimer"></div>
+
+  </body>
+</html>
