@@ -126,7 +126,7 @@
               </div>
               <div class="span6">
                 <div >
-                  <h4><strong><span class="colored">Passage</span></strong></h4>
+                  <h4 id= "passnum"><strong><span class="colored">Passage</span></strong></h4>
                   <div id="pass"></div>
                 </div>
               </div>
@@ -158,7 +158,13 @@
           $("#messages").append("<li>Time : " + msg.time + "</li>");
           $("#messages").append("<li>Scores : " + msg.scores + "</li>");
           $("#messages").append("<li>Result : " + msg.result + "</li>");
-          $("#pass").load("text/text3_"+msg.result+".html");
+          if(msg.result == -1){
+            $("#passnum").empty().append('<h4 id = "passnum"><strong><span class="colored">There is no result</span></strong></h4>');
+          }
+          else{
+            $("#pass").load("text/text3_"+msg.result+".html");
+            $("#passnum").empty().append('<h4 id = "passnum"><strong><span class="colored">Passage '+ msg.result+"</span></strong></h4>");
+          }
         });
         $("#sendbutton").on("click", function() {
           var msg = {
