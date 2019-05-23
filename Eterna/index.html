@@ -28,6 +28,19 @@
   <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
   <link rel="shortcut icon" href="ico/favicon.png" />
 
+  <!--taeoh-->
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"
+  ></script>
+  <!-- here taeoh -->
   <!-- =======================================================
     Theme Name: Eterna
     Theme URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
@@ -38,6 +51,56 @@
 
 <body>
 
+  <div class="container-fluid">
+    <div class="row">
+      <h1>Bert Demo Site</h1>
+    </div>
+    <div class="form-group">
+      <input
+        id="query"
+        type="text"
+        class="form-control"
+        placeholder="질문을 입력하세요"
+        name="text1"
+      />
+      <button id="sendbutton" type="submit" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <h2>Result</h2>
+        <ul id="messages"></ul>
+      </div>
+      <div class="col-lg-9">
+        <h2>문서</h2>
+      </div>
+    </div>
+    <p>This is some text.</p>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var socket = io.connect("http://127.0.0.1:9999");
+      socket.on("connect", function() {
+        console.log("Connected");
+      });
+
+      socket.on("json", function(msg) {
+        console.log("hello");
+        $("#messages").append("<li>Time : " + msg.time + "</li>");
+        $("#messages").append("<li>Scores : " + msg.scores + "</li>");
+        $("#messages").append("<li>Result : " + msg.results + "</li>");
+      });
+      $("#sendbutton").on("click", function() {
+        var msg = {
+          question: $("#query").val(),
+          passages: 1
+        };
+        socket.emit("message", msg);
+        $("#query").val("");
+      });
+    });
+  </script>
   <div id="wrapper">
 
     <!-- start header -->
@@ -148,14 +211,13 @@
     </header>
     <!-- end header -->
 
-    <!-- section featured -->
     <section id="featured">
 
       <!-- slideshow start here -->
 
       <div class="camera_wrap" id="camera-slide">
         <!-- slide 1 here -->
-        <div data-src="img/slides/camera/slide1/img1.jpg">
+        <div data-src="img/slides/parallax/bg2.png">
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
@@ -179,7 +241,7 @@
         </div>
 
         <!-- slide 2 here -->
-        <div data-src="img/slides/camera/slide2/img1.jpg">
+        <div data-src="img/slides/parallax/bg2.png">
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
@@ -204,7 +266,7 @@
           </div>
         </div>
         <!-- slide 3 here -->
-        <div data-src="img/slides/camera/slide2/img1.jpg">
+        <div data-src="img/slides/parallax/bg2.png">
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
@@ -229,7 +291,7 @@
           </div>
         </div>
         <!-- slide 4 here -->
-        <div data-src="img/slides/camera/slide2/img1.jpg">
+        <div data-src="img/slides/parallax/bg2.png">
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
