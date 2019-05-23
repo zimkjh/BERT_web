@@ -49,18 +49,6 @@
             <div class="span6">
               <p class="topcontact">CSI4101 소프트웨어 종합설계</p>
             </div>
-            <div class="span6">
-
-              <ul class="social-network">
-                <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest  icon-white"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Dribbble"><i class="icon-dribbble icon-white"></i></a></li>
-              </ul>
-
-            </div>
           </div>
         </div>
       </div>
@@ -81,10 +69,6 @@
                     <li class="dropdown active">
                       <a href="index.html"><i class="icon-home"></i> Home </a>
                       <ul class="dropdown-menu">
-                        <!-- <li><a href="index-alt2.html">Homepage 2</a></li> -->
-                        <!-- <li><a href="index-alt3.html">Homepage 3</a></li> -->
-                        <!-- <li><a href="index-alt4.html">Parallax slider</a></li> -->
-                        <!-- <li><a href="index-landingpage.html">Landing page</a></li> -->
                       </ul>
                     </li>
 
@@ -141,7 +125,11 @@
               <div class="span6">
                 <div >
                   <h4><strong><span class="colored">Passage</span></strong></h4>
-                  <ul id = "pass">sdf</ul>
+                  <p id = "pass">sdf</p>
+
+
+
+
                 </div>
               </div>
             </div>
@@ -160,14 +148,13 @@
 
     <script type="text/javascript">
 
-    // var xhr = new XMLHttpRequest;
-    // xhr.open('GET', 'text/text1_0.txt', true);
-    // xhr.onload = function (){
-    //     document.getElementById('pass')write( xhr.responseText );
-    //     $("#pass").append("<li>dsf " + xhr + "</li>");
-    // };
-    // xhr.send(null);
-
+    // const fs = require('fs');
+    //
+    // fs.readFile('text/text1_0.txt', (err, data) => {
+    //     if (err) throw err;
+    //
+    //     console.log(data.toString());
+    // });
 
       $(document).ready(function() {
         var socket = io.connect("http://127.0.0.1:9999");
