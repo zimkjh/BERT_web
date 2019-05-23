@@ -86,7 +86,10 @@
           </div>
         </div>
       </div>
+      <link rel="import" href="text/text1_0.html">
+
     </header>
+
     <!-- end header -->
 
     <section id="inner-headline">
@@ -148,13 +151,7 @@
 
     <script type="text/javascript">
 
-    // const fs = require('fs');
-    //
-    // fs.readFile('text/text1_0.txt', (err, data) => {
-    //     if (err) throw err;
-    //
-    //     console.log(data.toString());
-    // });
+
 
       $(document).ready(function() {
         var socket = io.connect("http://127.0.0.1:9999");
@@ -163,7 +160,6 @@
         });
 
         socket.on("json", function(msg) {
-          console.log("hello");
           $("#messages").append("<li>Time : " + msg.time + "</li>");
           $("#messages").append("<li>Scores : " + msg.scores + "</li>");
           $("#messages").append("<li>Result : " + msg.result + "</li>");
@@ -175,8 +171,17 @@
           };
           socket.emit("message", msg);
           $("#query").val("");
+
+          if(msg.result == 1){
+            console.log("True")
+          }
+          else{
+            console.log("False")
+          }
+
         });
       });
+
     </script>
 <!-- taeoh2 -->
 
