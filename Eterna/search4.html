@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -28,12 +28,12 @@
   <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
   <link rel="shortcut icon" href="ico/favicon.png" />
 
-  <!-- =======================================================
-    Theme Name: Eterna
-    Theme URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"
+></script>
 </head>
 
 
@@ -71,6 +71,7 @@
                       <ul class="dropdown-menu">
                       </ul>
                     </li>
+
                     <li>
                       <a href="portfolio-2cols.html">Demo</a>
                     </li>
@@ -85,7 +86,9 @@
           </div>
         </div>
       </div>
+
     </header>
+
     <!-- end header -->
 
     <section id="inner-headline">
@@ -98,116 +101,92 @@
                 <li><a href="#">QA</a> <i class="icon-angle-right"></i></li>
                 <li class="active">Wiki List</li>
               </ul>
-              <h2>Wiki List</h2>
+              <h2>4. Banquo</h2>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- taeoh2 -->
     <section id="content">
       <div class="container">
-        <div class="row">
           <div class="span12">
 
-            <div class="clearfix"></div>
             <div class="row">
-              <section id="projects">
-                <ul id="thumbs" class="grid cs-style-4 portfolio">
+              <div class="span6">
 
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span6 web" data-id="id-0" data-type="web">
-                    <div class="item">
-                      <figure>
-                        <a href="search1.html"><img  src="img/dummies/works/1.jpg" alt="" /></a>
-                        <figcaption>
-                          <div>
-                            <span >
-											<a href="https://en.wikipedia.org/wiki/Philadelphia_Eagles"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
-
-											</span>
-                      <span><a >Go to Wiki </a></span>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </li>
-                  <!-- End Item Project -->
-
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span6 icon" data-id="id-1" data-type="icon">
-                    <div class="item">
-                      <figure>
-                        <a href ="search2.html"><img src="img/dummies/works/2.jpg" alt="" /></a>
-                        <figcaption>
-                          <div>
-                            <span>
-											<a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics" ><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
-											</span>
-                      <span><a >Go to Wiki </a></span>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </li>
-                  <!-- End Item Project -->
-
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span6 graphic" data-id="id-2" data-type="graphic">
-                    <div class="item">
-                      <figure>
-                        <a href ="search3.html"><img src="img/dummies/works/3.jpg" alt="" /></a>
-                        <figcaption>
-                          <div>
-                            <span>
-											<a href="https://en.wikipedia.org/wiki/Deadpool_2" ><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
-											</span>
-                      <span><a >Go to Wiki </a></span>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </li>
-                  <!-- End Item Project -->
-
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span6 web" data-id="id-0" data-type="web">
-                    <div class="item">
-                      <figure>
-                        <a href ="search4.html"><img src="img/dummies/works/4.jpg" alt="" /></a>
-                        <figcaption>
-                          <div>
-                            <span>
-											<a href="https://en.wikipedia.org/wiki/Banquo" ><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
-											</span>
-                      <span><a >Go to Wiki </a></span>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </li>
-                  <!-- End Item Project -->
-
-
-                </ul>
-              </section>
-
+                <div class="input-append" >
+                  <input id="query" class="span3 input-large" type="text" placeholder="질문을 입력하세요" name="text1">
+                  <button id="sendbutton" class="btn btn-theme btn-large" type="submit">Send Query</button>
+                </div>
+                <div class ="span4">
+                  <img src="img/dummies/works/4.jpg" alt="">
+                </div>
+              </div>
+              <div class="span6">
+                <div >
+                  <h4><strong><span class="colored">Passage</span></strong></h4>
+                  <div id="pass"></div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="row">
+          <div class="span4">
+              <h4><strong><span class="colored">Result</span></strong></h4>
+          </div>
+          <div class="span8">
+              <ul id="messages"></ul>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            <div class="widget">
 
-            </div>
-          </div>
-        </div>
-      </div>
+    <script type="text/javascript">
+
+
+
+      $(document).ready(function() {
+        var socket = io.connect("http://127.0.0.1:9999");
+        socket.on("connect", function() {
+          console.log("Connected");
+        });
+
+        socket.on("json", function(msg) {
+          $("#messages").append("<li>Time : " + msg.time + "</li>");
+          $("#messages").append("<li>Scores : " + msg.scores + "</li>");
+          $("#messages").append("<li>Result : " + msg.result + "</li>");
+          $("#pass").load("text/text4_"+msg.result+".html");
+        });
+        $("#sendbutton").on("click", function() {
+          var msg = {
+            question: $("#query").val(),
+            passages: 1
+          };
+          socket.emit("message", msg);
+          $("#query").val("");
+
+          if(msg.result == 1){
+            console.log("True")
+          }
+          else{
+            console.log("False")
+          }
+
+        });
+
+
+
+      });
+
+    </script>
+<!-- taeoh2 -->
+
+
+
+    <footer>
       <div id="sub-footer">
         <div class="container">
           <div class="row">
@@ -217,9 +196,6 @@
 
               </div>
 
-            </div>
-
-            <div class="span6">
             </div>
           </div>
         </div>
