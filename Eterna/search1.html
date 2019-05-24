@@ -1,239 +1,414 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>KCK - Efficient QA System Implementation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your page description here" />
+    <meta name="author" content="" />
 
-<head>
-  <meta charset="utf-8">
-  <title>KCK - Efficient QA System Implementation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Your page description here" />
-  <meta name="author" content="" />
+    <!-- css -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <link href="css/camera.css" rel="stylesheet" />
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 
-  <!-- css -->
-  <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
-  <link href="css/bootstrap.css" rel="stylesheet" />
-  <link href="css/bootstrap-responsive.css" rel="stylesheet" />
-  <link href="css/flexslider.css" rel="stylesheet" />
-  <link href="css/prettyPhoto.css" rel="stylesheet" />
-  <link href="css/camera.css" rel="stylesheet" />
-  <link href="css/jquery.bxslider.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
+    <!-- Theme skin -->
+    <link href="color/default.css" rel="stylesheet" />
 
-  <!-- Theme skin -->
-  <link href="color/default.css" rel="stylesheet" />
+    <!-- Fav and touch icons -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="ico/apple-touch-icon-57-precomposed.png"
+    />
+    <link rel="shortcut icon" href="ico/favicon.png" />
 
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
-  <link rel="shortcut icon" href="ico/favicon.png" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script
+      src="js/jquery.progressBarTimer.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"
+    ></script>
+  </head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"
-></script>
-</head>
-
-
-<body>
-
-  <div id="wrapper">
-
-    <!-- start header -->
-    <header>
-      <div class="top">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <p class="topcontact">CSI4101 소프트웨어 종합설계</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-
-
-        <div class="row nomargin">
-          <div class="span4">
-            <div class="logo">
-              <a href="index.html"><img src="img/logo.png" alt="" /></a>
-            </div>
-          </div>
-          <div class="span8">
-            <div class="navbar navbar-static-top">
-              <div class="navigation">
-                <nav>
-                  <ul class="nav topnav">
-                    <li class="dropdown active">
-                      <a href="index.html"><i class="icon-home"></i> Home </a>
-                      <ul class="dropdown-menu">
-                      </ul>
-                    </li>
-
-                    <li>
-                      <a href="portfolio-2cols.html">Demo</a>
-                    </li>
-                    <li>
-                      <a href="contact.html">About Us</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <!-- end navigation -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </header>
-
-    <!-- end header -->
-
-    <section id="inner-headline">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="inner-heading">
-              <ul class="breadcrumb">
-                <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
-                <li><a href="#">QA</a> <i class="icon-angle-right"></i></li>
-                <li class="active">Wiki List</li>
-              </ul>
-              <h2>1. Philadelphia Eagles</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- taeoh2 -->
-    <section id="content">
-      <div class="container">
-          <div class="span12">
-
+  <body>
+    <div id="wrapper">
+      <!-- start header -->
+      <header>
+        <div class="top">
+          <div class="container">
             <div class="row">
               <div class="span6">
+                <p class="topcontact">CSI4101 소프트웨어 종합설계</p>
+              </div>
+              <div class="span6">
+                <ul class="social-network">
+                  <li>
+                    <a href="#" data-placement="bottom" title="Facebook"
+                      ><i class="icon-facebook icon-white"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" data-placement="bottom" title="Twitter"
+                      ><i class="icon-twitter icon-white"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" data-placement="bottom" title="Linkedin"
+                      ><i class="icon-linkedin icon-white"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" data-placement="bottom" title="Pinterest"
+                      ><i class="icon-pinterest  icon-white"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" data-placement="bottom" title="Google +"
+                      ><i class="icon-google-plus icon-white"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" data-placement="bottom" title="Dribbble"
+                      ><i class="icon-dribbble icon-white"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row nomargin">
+            <div class="span4">
+              <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt=""/></a>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="navbar navbar-static-top">
+                <div class="navigation">
+                  <nav>
+                    <ul class="nav topnav">
+                      <li class="dropdown active">
+                        <a href="index.html"><i class="icon-home"></i> Home </a>
+                        <ul class="dropdown-menu">
+                          <!-- <li><a href="index-alt2.html">Homepage 2</a></li> -->
+                          <!-- <li><a href="index-alt3.html">Homepage 3</a></li> -->
+                          <!-- <li><a href="index-alt4.html">Parallax slider</a></li> -->
+                          <!-- <li><a href="index-landingpage.html">Landing page</a></li> -->
+                        </ul>
+                      </li>
 
-                <div class="input-append" >
-                  <input id="query" class="span3 input-large" type="text" placeholder="질문을 입력하세요" name="text1">
-                  <button id="sendbutton" class="btn btn-theme btn-large" type="submit">Send Query</button>
+                      <li>
+                        <a href="portfolio-2cols.html">Demo</a>
+                      </li>
+                      <li>
+                        <a href="contact.html">About Us</a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
-                <div class ="span4">
-                  <img src="img/dummies/works/1.jpg" alt="">
+                <!-- end navigation -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- end header -->
+
+      <section id="inner-headline">
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+              <div class="inner-heading">
+                <ul class="breadcrumb">
+                  <li>
+                    <a href="index.html">Home</a>
+                    <i class="icon-angle-right"></i>
+                  </li>
+                  <li><a href="#">QA</a> <i class="icon-angle-right"></i></li>
+                  <li class="active">Wiki List</li>
+                </ul>
+                <h2>1. Napoleon Dynamite</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- taeoh2 -->
+      <section id="content">
+        <div class="container">
+          <div class="span12">
+            <div class="row">
+              <div class="input-append">
+                <input
+                  id="query"
+                  class="span10 input-large"
+                  type="text"
+                  placeholder="질문을 입력하세요"
+                  name="text1"
+                />
+                <button
+                  id="sendbutton"
+                  class="btn btn-theme btn-large"
+                  type="submit"
+                >
+                  Send Query
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="span6">
+                <div class="span4">
+                  <img src="img/dummies/works/1.jpg" alt="" />
+                </div>
+                <div class="span6">
+                  <h4>
+                    <strong><span class="colored">Result</span></strong>
+                  </h4>
+                  <div id="messages"></div>
+
+                  <!-- <main role="main" class="container">
+                    <div class="card">
+                      <div class="card-body">
+                        <div id="bar1"></div>
+                        <div class="mt-3">
+                          <button
+                            type="button"
+                            id="sendbutton"
+                            class="btn btn-primary"
+                          >
+                            Start
+                          </button>
+                          <button
+                            type="button"
+                            id="stopBtn"
+                            class="btn btn-secondary"
+                            disabled="disabled"
+                          >
+                            Stop
+                          </button>
+                          <button
+                            type="button"
+                            id="resetBtn"
+                            class="btn btn-info"
+                          >
+                            Reset
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <script>
+                      $("#bar1").progressBarTimer({
+                        label: { show: true, type: "seconds" },
+                        height: 25,
+                        animated: true,
+                        smooth: true
+                      });
+                      $("#sendbutton").click(function() {
+                        $("#bar1")
+                          .progressBarTimer()
+                          .start();
+                        $("#stopBtn").prop("disabled", false);
+                        $("#sendbutton").prop("disabled", true);
+                      });
+                      $("#stopBtn").click(function() {
+                        $("#bar1")
+                          .progressBarTimer()
+                          .stop();
+                        $("#stopBtn").prop("disabled", true);
+                        $("#sendbutton").prop("disabled", false);
+                      });
+                      $("#resetBtn").click(function() {
+                        $("#bar1")
+                          .progressBarTimer()
+                          .start();
+                        $("#stopBtn").prop("disabled", false);
+                        $("#bar1")
+                          .progressBarTimer()
+                          .reset();
+                      });
+                    </script>
+                  </main> -->
                 </div>
               </div>
               <div class="span6">
-                <div >
-                  <h4 id = "passnum"><strong><span class="colored">Passage</span></strong></h4>
-                  <div id="pass"></div>
+                <div class="row">
+                  <h4>
+                    <strong><span class="colored">Passage</span></strong>
+                  </h4>
+                </div>
+                <div class="row" id="passage">
+                <p> Napoleon Dynamite Theatrical release poster Directed by Jared Hess Produced by Jeremy Coon Chris Wyatt Sean Covel Jory Weitz Screenplay by Jared Hess Jerusha Hess Based on Peluca by Jared Hess Starring Jon Heder Jon Gries Efren Ramirez Tina Majorino Aaron Ruell Diedrich Bader Haylie Duff Music by John Swihart Cinematography Munn Powell Edited by Jeremy Coon Production company MTV Films Napoleon Pictures Access Films Distributed by Fox Searchlight Pictures ( North America ) Paramount Pictures ( International ) Release date January 17 , 2004 ( 2004 - 01 - 17 ) ( Sundance ) June 11 , 2004 ( 2004 - 06 - 11 ) ( United States ) Running time 95 minutes Country United States Language English Budget $400,000 Box office $46.1 million </p><p> Napoleon Dynamite is a 2004 American comedy film produced by Jeremy Coon , Chris Wyatt , Sean Covel and Jory Weitz , written by Jared and Jerusha Hess and directed by Jared Hess . The film stars Jon Heder in the role of the title character , for which he was paid $1,000 . After the film 's runaway success , Heder re-negotiated his compensation and received a cut of the profits . The film was Jared Hess ' first full - length feature and is partially adapted from his earlier short film , Peluca . Napoleon Dynamite was acquired at the Sundance Film Festival by Fox Searchlight Pictures and Paramount Pictures , in association with MTV Films . It was filmed in and near Franklin County , Idaho in the summer of 2003 . It debuted at the Sundance Film Festival in January 2004 . The film 's total worldwide gross revenue was $46,118,097 . The film has since developed a cult following . </p><p> Napoleon Dynamite is a socially awkward 16 - year - old boy from Preston , Idaho , who lives with his grandmother , Carlinda Dynamite , and his older brother , Kipling Ronald `` Kip '' Dynamite . Kip , 32 , is unemployed and boasts of spending hours on Internet chat rooms with his girlfriends and aspiring to be a cage fighter . Napoleon daydreams his way through school , doodling ligers and fantasy creatures and reluctantly deals with the various bullies who torment him , particularly the obnoxious sports jock , Don . Napoleon likes to make up stories about himself and his outlandish `` skills '' while having a sullen and aloof personality . </p><p> Napoleon 's grandmother breaks her coccyx in a quad - bike accident and asks their Uncle Rico to look after the boys while she recovers . Rico , a middle - aged and flirtatious steak - loving former athlete who lives in a campervan , treats Napoleon like a child . He uses the visiting opportunity to team up with Kip in a get - rich - quick scheme to sell numerous items door - to - door . Kip wants money to visit his Internet girlfriend LaFawnduh while Rico believes riches will help him get over his failed dreams of NFL stardom and his recent breakup with his girlfriend . </p><p> Napoleon becomes friends with two students at his school : Deb , a shy girl who runs various small businesses to raise money for college ; and Pedro , a bold yet calm transfer student from Juarez , Mexico . A friendship soon develops between the three outcasts . During this time , preparations begin for the high school dance . Pedro first asks Summer Wheatley , a popular and snobby girl , to be his dance partner , but is rebuffed . He then asks Deb , who accepts happily . Pedro encourages an upset Napoleon to find a date for himself , and he picks an attractive classmate called Trisha from the school yearbook . As a gift , he draws a bad picture of her and delivers it to Trisha 's mother , who is incidentally a customer of Rico . Rico tells embarrassing stories about Napoleon to evoke sympathy from her . She buys the goods and also forces Trisha to reluctantly accept Napoleon 's request . </p><p> Inspired by an election poster at the dance , Pedro decides to run for class president , putting him against Summer . The two factions put up flyers and give out accessories to the students to attract voters . In an attempt to increase their respect by demonstrating `` skills '' , Napoleon and Pedro enter a Future Farmers of America competition , grading milk and cow udders . They do well and win medals , but this does little for their popularity . Incidentally , Napoleon visits an op - shop and buys a dance instructional VHS called `` D - Qwon 's Dance Grooves '' , becoming a skillful dancer . </p><p> Kip , meanwhile , is head - over-heels in love since LaFawnduh has come to visit him from Detroit . She gives Kip an urban makeover , outfitting him in hip - hop regalia . Seeing that he dances , LaFawnduh also gives Napoleon a mixtape . </p><p> Rico 's ongoing scheme causes friction with Napoleon as he continues to spread embarrassing rumors about him to his prospective customers . Rico later tries to sell Deb a breast - enhancement product , claiming it was Napoleon 's suggestion , which causes her to break off their friendship . His scheme ends when he visits the wife of the town 's martial arts instructor , Rex , to try and sell her the breast enhancements ; Rex walks in and beats him up after witnessing Rico 's demonstration . </p><p> On the day of the class president elections , Summer gives a speech before the student body , and then presents a dance skit with a school club . Pedro and Napoleon then discover that a skit was also required from them , and a despondent Pedro gives an unimpressive speech . In an attempt to save Pedro 's campaign , Napoleon gives the sound engineer LaFawnduh 's tape , and spontaneously performs an elaborate dance routine to `` Canned Heat '' by Jamiroquai . Summer and her boyfriend Don are unimpressed , but the routine receives a standing ovation from all the other students , including Deb . </p><p> The film concludes with Pedro becoming the class president , LaFawnduh leaving with Kip on a bus for Michigan , Rico reuniting with his estranged girlfriend , Grandma returning from the hospital , and Napoleon and Deb making up and playing tetherball . </p><p> In a post-credits scene , Kip and LaFawnduh are married in an outdoor ceremony in Preston . Napoleon , absent for the vows , arrives riding a horse , claiming that it is a `` wild honeymoon stallion '' that he has tamed himself . Kip flicks LaFawnduh 's garter as a `` keepsake '' towards Napoleon , Pedro and Rico ( who catches it ) before he and LaFawnduh ride off across the fields . </p><p> Jon Heder as Napoleon Dynamite Efren Ramirez as Pedro Sánchez Tina Majorino as Deborah `` Deb '' Bradshaw Aaron Ruell as Kipling `` Kip '' Dynamite Jon Gries as Rico Dynamite Haylie Duff as Summer Wheatley Emily Kennard as Trisha Jenner Shondrella Avery as LaFawnduh Lucas Sandy Martin as Grandma Carlinda Dynamite Diedrich Bader as Rex Trevor Snarr as Don Ellen Dubin as Aunt Ilene </p><p> Jon Heder and Jared Hess were both students at the film program at Brigham Young University in 2002 and decided to collaborate together on a class project . The duo produced a 9 minute short film shot on black - and - white 16mm film entitled Peluca , about a nerdy high school student named Seth , for a class assignment . </p><p> We went up to Preston and shot the short film over two days in black and white . We knew that we wanted to do a feature -- we 'd already started writing a script for what would become Napoleon at that point -- but we wanted to do a short film on the character to bring him to life . It was for a class assignment , and we were still trying to figure out the best way to end it . </p><p> Peluca was shown at the 2003 Slamdance Film Festival and was well received . Jeremy Coon , who was the brother of a good friend of Hess 's in film school , convinced Hess to drop out of school and adapt it into a feature - length film , and helped him find investors for the project . </p><p> Hess sent the short film along with the script to a variety of different casting directors ; many of whom thought the film idea was `` too weird or they just did n't like the character . They were like , ' The script 's funny , but I think you need to recast this guy with somebody else , ' '' Hess explained . </p><p> Hess describes the film as being `` so autobiographical . '' `` I grew up in a family of six boys in Preston , Idaho and the character of Napoleon was a hybrid of all the most nerdy and awkward parts of me and my brothers growing up . Jerusha really was like Deb growing up . Her mom made her a dress when she was going to a middle school dance and she said , ' I had n't really developed yet , so my mom overcompensated and made some very large , fluffy shoulders . '' Some guy dancing with her patted the sleeves and actually said , ' I like your sleeves ... they 're real big , `` ' Hess said in an interview with Rolling Stone . </p><p> Hess shot the film on location in Preston , in Southeastern Idaho , located near the Utah border , in July of 2003 . Operating on a tight budget of $400,000 , Hess cast many of his friends from school , including Heder and Aaron Ruell , and relied on the generosity of Preston locals who provided housing and food to crew members . </p><p> `` It was very , very hot , '' Hess recalls . `` But it was so much fun being in this rural farm town making a movie . We shot it in 23 days , so we were moving very , very fast ; I just did n't have a lot of films to be able to do a lot of takes . It was a bunch of friends getting together to make a movie . It was like , `` Are people going to get this ? Is it working ? '' </p><p> The film is set during the 2004 - 2005 school year , as shown on Napoleon 's student ID card in the title sequence . However , the film contains a number of anachronisms indicating that it would be more appropriately set in the 1980s or 1990s . For example , Deb wears a side ponytail and Napoleon wears Moon Boots , both popular fashion trends of the 1980s . One scene is set at a school dance which only plays 1980s music such as Alphaville 's `` Forever Young , '' while a later scene features students performing a sign language rendition of `` The Rose '' sung by Bette Midler . Much of the technology in the film is also archaic ; Napoleon uses a VCR and Walkman cassette player , Kip connects to the Internet via a pay - per - minute dial - up connection and Uncle Rico drives a 1975 Dodge Tradesman . That said , the song Napoleon Dynamite dances to at the end of the film -- Canned Heat by Jamiroquai -- came out in 1999 . </p><p> The film was originally made without opening titles ; audiences at test screenings were confused about when the film was set . Eight months after the film was completed , the title sequence was filmed in the cinematographer 's basement . Aaron Ruell , who played Kip , suggested the idea of the title sequence . The sequence shows a pair of hands placing and removing several objects on a table . Objects like plates of food had the credits written in condiments , while other objects like a Lemonheads box or a tube of ChapStick had the credits printed on them . Hess explains : </p><p> We actually had Jon Heder placing all the objects in and out ( of frame ) , and then showed it to Searchlight who really liked it and thought it was great , but some lady over there was like `` There are some hangnails or something -- the hands look kinda gross ! It 's really bothering me , can we re-shoot some of those ? We 'll send you guys a hand model . '' We were like `` WHAT ? ! '' . This , of course , was my first interaction with a studio at all , so they flew out a hand model a couple weeks later , who had great hands but was five or six shades darker than Jon Heder . So we reshot , but they 're now intermixed , so if you look there are like three different dudes ' hands ( our producers are in there too ) . It all worked out great , though , and was a lot of fun . </p><p> Upon the film 's release , it was noted that the name `` Napoleon Dynamite '' had originally been used by musician Elvis Costello , most visibly on his 1986 album Blood & Chocolate , although he had used the pseudonym on a single B - side as early as 1982 . Filmmaker Jared Hess states that he was not aware of Costello 's use of the name until two days before the end of shooting , when he was informed by a teenage extra . He later said , `` Had I known that name was used by anybody else prior to shooting the whole film , it definitely would have been changed ... I listen to hip - hop , dude . It 's a pretty embarrassing coincidence . '' Hess claims that `` Napoleon Dynamite '' was the name of a man he met around 2000 on the streets of Cicero , Illinois , while doing missionary work for the Church of Jesus Christ of Latter - day Saints ( LDS Church ) . </p><p> Costello believes that Hess got the name from him , whether directly or indirectly . Costello said , `` The guy just denies completely that I made the name up ... but I invented it . Maybe somebody told him the name and he truly feels that he came to it by chance . But it 's two words that you 're never going to hear together . '' </p><p> On August 30 , 2011 , Napoleon Pictures filed a lawsuit against Fox Searchlight for $10 million for underreporting royalties and taking improper revenue deductions . In its term sheet , Fox agreed to pay 31.66 % of net profits on home video . The lawsuit says that a 2008 audit revealed that Fox was only paying net royalties on home videos at a 9.66 % rate , and there were underreported royalties and improper deductions . </p><p> Napoleon Pictures also alleges that Fox has breached the agreement in multiple other respects , including underreporting pay television license fees , failing to report electronic sell - through revenue , charging residuals on home video sales , as well as overcharging residuals on home video sales , deducting a number of costs and charges Fox has no right to deduct and / or for which there is no supporting documentation . </p><p> In May 2012 , Fox went to trial after failing to win a summary judgment on the case . The trial began on June 19 , 2012 . On November 28 , 2012 , a 74 - page decision sided with Fox on 9 of the 11 issues . Napoleon Pictures was awarded $150,000 based on Fox accounting irregularities . </p><p> Napoleon Dynamite premiered at the Sundance Film Festival on January 17 , 2004 and was theatrically released on June 11 , 2004 in the United States by Fox Searchlight Pictures , Paramount Pictures and MTV Films . </p><p> Napoleon Dynamite was released on VHS and DVD on December 21 , 2004 , by 20th Century Fox Home Entertainment in North America and by Paramount Home Entertainment in all other territories . </p><p> Rotten Tomatoes , a review aggregator , reports that 71 % of 170 surveyed critics gave the film a positive review ; the average rating is 6.3 / 10 . The site 's consensus reads : `` A charming , quirky , and often funny comedy . '' Rolling Stone magazine complimented the film , saying , `` Hess and his terrific cast -- Heder is geek perfection -- make their own kind of deadpan hilarity . You 'll laugh till it hurts . Sweet . '' The Christian Science Monitor called the film `` a refreshing new take on the overused teen - comedy genre '' and said that the film `` may not make you laugh out loud -- it 's too sly and subtle for that -- but it will have you smiling every minute , and often grinning widely at its weirded - out charm . '' </p><p> Michael Atkinson of The Village Voice praised the film as `` an epic , magisterially observed pastiche on all - American geekhood , flooring the competition with a petulant shove . '' In a mixed review , The New York Times praised Heder 's performance and the `` film 's most interesting quality , which is its stubborn , confident , altogether weird individuality '' , while criticizing the film 's resolution that comes `` too easily . '' Film critic Roger Ebert gave the film one - and - a-half stars , writing that he felt that `` the movie makes no attempt to make ( Napoleon ) likable '' and that it contained `` a kind of studied stupidity that sometimes passes as humor '' . At the time , Entertainment Weekly gave the film a C - . Entertainment Weekly later ranked Napoleon # 88 on its 2010 list of The 100 Greatest Characters of the Last 20 Years , saying , `` A high school misfit found a sweet spot , tapping into our inner dork . '' The film was on several year - end lists . Rolling Stone placed it at number 22 of </p><p> The term `` The Napoleon Dynamite Problem '' has been used to describe the phenomenon where `` quirky '' films such as Napoleon Dynamite , Lost in Translation and I Heart Huckabees prove difficult for researchers to create algorithms that are able to predict whether or not a particular viewer will like the film based on their ratings of previously viewed films . Despite a very limited initial release , Napoleon Dynamite was a commercial success . It was filmed on an estimated budget of a mere $400,000 , and less than a year after its release , it had grossed $44,940,956 . It also spawned a slew of merchandise , from refrigerator magnets to T - shirts to Halloween costumes . </p><p> Best Feature Film at the U.S. Comedy Arts Festival the same year . The film 's budget was only $400,000 . When the film rights were sold to a major distributor , Fox Searchlight Pictures , Fox supplied additional funds for the post-credits scene . In 2005 , the film -- itself an MTV Films production -- won three MTV Movie Awards , for Breakthrough Male Performance , Best Musical Performance , and Best Movie . The film is # 14 on Bravo 's `` 100 Funniest Movies '' . It won the 2005 Golden Trailer Awards for Best Comedy . It won the 2005 Golden Satellite Award for Best Original Score ( John Swihart ) . Four awards at the Teen Choice Awards . Choice Movie : Female Breakout Star for Haylie Duff , Choice Movie : Dance Scene , Choice Movie : Hissy Fit for Jon Heder , and Choice Movie : Comedy . The 2004 Film Discovery Jury Award for Best Feature April 2005 , the Idaho Legislature approved a resolution commending the filmmakers for producing Napoleon Dynamite , specifically enumerating the benefits the movie has brought to Idaho , as well as for showcasing various aspects </p><p> In April 2010 , Fox announced that an animated series was in development . It was also revealed that the entire original cast would return to reprise their roles . The series debuted on Sunday , January 15 , 2012 . Director Jared Hess , his co-screenwriter wife Jerusha , and Mike Scully are the producers of the show , in association with 20th Century Fox Television . On May 14 , 2012 , It was announced that Fox had canceled the series after 6 episodes . The complete series was released on DVD on November 4 , 2014 by Olive Films . </p>
+
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-          <div class="span4">
-              <h4><strong><span class="colored">Result</span></strong></h4>
-          </div>
-          <div class="span8">
-              <ul id="messages"></ul>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <script type="text/javascript">
+        $(document).ready(function() {
+          var socket1 = io.connect("http://34.80.147.56:9999");
+          socket1.on("connect", function() {
+            console.log("Connected 1");
+          });
+          var socket2 = io.connect("http://35.221.185.214:9999");
+          socket2.on("connect", function() {
+            console.log("Connected 2");
+          });
+          var socket3 = io.connect("http://35.201.132.212:9999");
+          socket3.on("connect", function() {
+            console.log("Connected 3");
+          });
 
-    <script type="text/javascript">
+          function makeResult(msg, param) {
+            console.log("hello");
+            var newdiv = document.createElement("div");
+            var appendedHtml = `
+              <h4>${param.model}</h4>
+              <li>Time : ${msg.time}</li>
+              <li>Result : ${msg.result}</li>
+              <span style="background: ${param.clr}">color</span>
+            `
+            console.log(appendedHtml);
+            newdiv.innerHTML = appendedHtml;
+            document.getElementById("messages").appendChild(newdiv);
 
+            var passages = document
+              .getElementById("passage")
+              .getElementsByTagName("p");
+            var element = passages[msg.result];
+            var parent = element.parentNode;
+            var wrapper = document.createElement("div");
+            wrapper.style.border = `5px solid ${param.clr}`;
+            parent.replaceChild(wrapper, element);
+            wrapper.appendChild(element);
 
+          }
 
-      $(document).ready(function() {
-        var socket = io.connect("http://127.0.0.1:9999");
-        socket.on("connect", function() {
-          console.log("Connected");
+          socket1.on("json", function(msg) {
+            var param = {"model" : "BERT Base model",
+              "clr" : "#d6cbd3"};
+            makeResult(msg, param);
+          });
+          socket2.on("json", function(msg) {
+            var param = {"model" : "BM25L 1/2",
+              "clr" : "#eca1a6"};
+            makeResult(msg, param);
+          });
+          socket3.on("json", function(msg) {
+            var param = {"model" : "BM25L 1/4",
+              "clr" : "#bdcebe"};
+            makeResult(msg, param);
+          });
+          $("#sendbutton").on("click", function() {
+            var msg = {
+              question: $("#query").val(),
+              passages: 1
+            };
+            $("#query").val("Searching : "+msg.question);
+
+            var passages = document
+              .getElementById("passage")
+              .getElementsByTagName("p");
+            var innerdiv = document
+              .getElementById("passage")
+              .getElementsByTagName("div");
+            Array.from(innerdiv).forEach(function(el, index, arr) {
+              var parent = el.parentNode;
+
+              // move all children out of the element
+              while (el.firstChild) parent.insertBefore(el.firstChild, el);
+
+              // remove the empty element
+              parent.removeChild(el);
+            });
+            socket1.emit("message", msg);
+            socket2.emit("message", msg);
+            socket3.emit("message", msg);
+          });
         });
+      </script>
+      <!-- taeoh2 -->
 
-        socket.on("json", function(msg) {
-          $("#messages").append("<li>Time : " + msg.time + "</li>");
-          $("#messages").append("<li>Scores : " + msg.scores + "</li>");
-          $("#messages").append("<li>Result : " + msg.result + "</li>");
-          if(msg.result == -1){
-            $("#passnum").empty().append('<h4 id = "passnum"><strong><span class="colored">There is no result</span></strong></h4>');
-          }
-          else{
-            $("#pass").load("text/text1_"+msg.result+".html");
-            $("#passnum").empty().append('<h4 id = "passnum"><strong><span class="colored">Passage '+ msg.result+"</span></strong></h4>");
-          }
-        });
-        $("#sendbutton").on("click", function() {
-          var msg = {
-            question: $("#query").val(),
-            passages: 1
-          };
-          socket.emit("message", msg);
-          $("#query").val("");
-
-          if(msg.result == 1){
-            console.log("True")
-          }
-          else{
-            console.log("False")
-          }
-
-        });
-
-
-
-      });
-
-    </script>
-<!-- taeoh2 -->
-
-
-
-    <footer>
-      <div id="sub-footer">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <div class="copyright">
-                <p><span>&copy; Efficient QA System Implementation</span></p>
-
+      <footer>
+        <div id="sub-footer">
+          <div class="container">
+            <div class="row">
+              <div class="span6">
+                <div class="copyright">
+                  <p><span>&copy; Efficient QA System Implementation</span></p>
+                </div>
               </div>
-
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-  </div>
-  <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x active"></i></a>
+      </footer>
+    </div>
+    <a href="#" class="scrollup"
+      ><i class="icon-angle-up icon-square icon-bglight icon-2x active"></i
+    ></a>
 
-  <!-- javascript
+    <!-- javascript
     ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/bootstrap.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+           src="https://code.jquery.com/jquery-3.4.1.min.js"
+           integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+           crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.js"></script>
 
-  <script src="js/modernizr.custom.js"></script>
-  <script src="js/toucheffects.js"></script>
-  <script src="js/google-code-prettify/prettify.js"></script>
-  <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/toucheffects.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
 
-  <script src="js/jquery.prettyPhoto.js"></script>
-  <script src="js/portfolio/jquery.quicksand.js"></script>
-  <script src="js/portfolio/setting.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/portfolio/jquery.quicksand.js"></script>
+    <script src="js/portfolio/setting.js"></script>
 
-  <script src="js/jquery.flexslider.js"></script>
-  <script src="js/animate.js"></script>
-  <script src="js/inview.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/inview.js"></script>
 
-  <!-- Template Custom JavaScript File -->
-  <script src="js/custom.js"></script>
-
-
-</body>
-
+    <!-- Template Custom JavaScript File -->
+    <script src="js/custom.js"></script>
+  </body>
 </html>
